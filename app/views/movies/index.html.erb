@@ -1,0 +1,33 @@
+<h1>Listing Movies</h1>
+<%= link_to "New", new_movie_path, :class => "pull-right btn btn-primary" %>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<!-- <th>Image url</th> -->
+<th>Director</th>
+<th>Image</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<% @movies.each do |movie| %>
+<tr>
+<td><%= movie.title.capitalize %></td>
+<td><%= movie.description.capitalize %></td>
+<td><%= movie.director %></td>
+<td><%= image_tag movie.image.url(:medium) %></td>
+<td><%= link_to 'Show', movie_path(movie.id) %></td>
+<td><%= link_to 'Edit', edit_movie_path(movie.id) %></td>
+<td><%= link_to 'Destroy', movie_path(movie.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+<br>
+

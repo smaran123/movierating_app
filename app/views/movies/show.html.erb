@@ -1,0 +1,22 @@
+<p>
+
+<%= image_tag @movie.image.url(:medium) %>
+</p>
+<p>
+<strong>Title:</strong>
+<%= @movie.title.capitalize %>
+</p>
+<p>
+<strong>Description:</strong>
+<%= @movie.description.capitalize %>
+</p>
+<p>
+<strong>Director</strong>
+<%= @movie.director %>
+</p>
+<p>
+<strong>MovieLength:</strong>
+<%= @movie.movie_length.capitalize %>
+</p>
+
+<%= link_to "Viewall", movies_path %>
