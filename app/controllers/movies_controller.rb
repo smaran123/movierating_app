@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
 	end
 
 	def index
-		@movies = Movie.all
+		@movies = Movie.search(params[:search])
 	end 
 
 	def edit

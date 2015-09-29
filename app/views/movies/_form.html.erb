@@ -42,9 +42,12 @@
 
 <div class="form-group">
 <div class="col-sm-1">
-<%= f.label :rating %><br>
+<%#= f.label :rating %>
+ <%= f.label :video %>
+ <br>
 </div>
-<%= f.text_field :rating %>
+<%#= f.text_field :rating %>
+  <%= f.file_field :video_file, :style => "float: left;" %>
 </div>
 <br />
 
