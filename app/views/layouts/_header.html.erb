@@ -15,18 +15,6 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
 
-<% if current_user %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% else %>
-<li><%= link_to "SignIn",new_user_session_path %></li>
-<li> <%= link_to "SignUp",new_user_registration_path %></li>
-<% end %>
-</ul>
-
-
-
-
-
 <%= form_tag movies_path, :class => "navbar-form navbar-left", :method => 'get' do %>
   <p>
     <%= text_field_tag :search,params[:search] %>
@@ -35,7 +23,13 @@
 <% end %>
 
 
-
+<% if current_user %>
+<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+<% else %>
+<li><%= link_to "SignIn",new_user_session_path %></li>
+<li> <%= link_to "SignUp",new_user_registration_path %></li>
+<% end %>
+</ul>
 
 
 
