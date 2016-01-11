@@ -13,15 +13,16 @@ has_attached_file :image, :styles => { :medium => "400x400>" }
 validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
  # validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
 
-def self.search(search)
-  if search
-    where('title LIKE ?', "%#{search}%")
-  else
-    all
-  end
+# def self.search(search)
+#   if search
+#     where('title LIKE ?', "%#{search}%")
+#   else
+#     all
+#   end
+# end
+
+
 end
 
 
 
-
-end
